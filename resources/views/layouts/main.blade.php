@@ -9,7 +9,7 @@
   @vite('resources/css/app.css')
 </head>
 
-<body data-theme="winter" class="selection:bg-primary selection:text-white">
+<body data-theme="dracula" class="selection:bg-primary selection:text-white">
 
   <div class="flex flex-col justify-between min-h-screen">
     <div>
@@ -20,7 +20,8 @@
     </div>
 
     <footer class="flex items-center justify-center p-6">
-      <span class="text-sm text-gray-500 dark:text-gray-400">© 2022 <a href="/about" class="hover:underline">Dwi
+      <span class="text-sm text-gray-500 dark:text-gray-400">© 2022 <a href="/about"
+          class="hover:underline hover:text-primary">Dwi
           Husnawan™</a>. All Rights Reserved.
       </span>
     </footer>
