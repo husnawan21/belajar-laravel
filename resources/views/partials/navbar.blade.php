@@ -2,7 +2,8 @@
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 active:stroke-primary" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </label>
@@ -47,9 +48,13 @@
       <li class="hover:rounded-md"><a href="/students"
           class="{{ Request::is('students') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Students</a>
       </li>
+      <li class="hover:rounded-md"><a href="/class"
+          class="{{ Request::is('class') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Class</a>
+      </li>
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>
       </li>
+
     </ul>
   </div>
   <div class="navbar-end">
