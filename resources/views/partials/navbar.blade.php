@@ -51,6 +51,9 @@
       <li class="hover:rounded-md"><a href="/class"
           class="{{ Request::is('class') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Class</a>
       </li>
+      <li class="hover:rounded-md"><a href="/extracurricular"
+          class="{{ Request::is('extracurricular') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Extracurricular</a>
+      </li>
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>
       </li>

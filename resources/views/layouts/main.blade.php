@@ -9,7 +9,7 @@
   @vite('resources/css/app.css')
 </head>
 
-<body data-theme="dracula" class="selection:bg-primary selection:text-white">
+<body class="selection:bg-primary selection:text-white">
 
   <div class="flex flex-col justify-between min-h-screen">
     <div>
