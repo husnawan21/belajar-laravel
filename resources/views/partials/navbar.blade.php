@@ -22,6 +22,7 @@
           </ul>
         </li>
         <li><a href="/about">About</a></li>
+        <li><a href="/about">Students</a></li>
       </ul>
     </div>
     <a class="text-xl normal-case btn btn-ghost hover:text-primary hover:bg-primary/10">laravUI</a>
@@ -42,6 +43,9 @@
           <li><a>Submenu 1</a></li>
           <li><a>Submenu 2</a></li>
         </ul>
+      </li>
+      <li class="hover:rounded-md"><a href="/students"
+          class="{{ Request::is('students') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Students</a>
       </li>
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>
