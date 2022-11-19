@@ -21,6 +21,7 @@
               <th>Nama</th>
               <th>NIS</th>
               <th>Gender</th>
+              <th>Kelas</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +32,7 @@
                 <td class="capitalize">{{ $data->name }}</td>
                 <td>{{ $data->nis }}</td>
                 <td>{{ $data->gender }}</td>
+                <td>{{ $data->class['name'] }}</td>
             @endforeach
 
 

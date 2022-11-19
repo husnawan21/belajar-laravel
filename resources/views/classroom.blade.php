@@ -17,6 +17,7 @@
             <tr>
               <th class="text-center w-14">#</th>
               <th>Nama</th>
+              <th>Nama Siswa</th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +26,11 @@
               <tr>
                 <th class="text-center w-14">{{ $loop->iteration }}</th>
                 <td class="capitalize">{{ $data->name }}</td>
+                <td class="capitalize">
+                  @foreach ($data->students as $student)
+                    {{ $student->name }} <br>
+                  @endforeach
+                </td>
             @endforeach
 
 

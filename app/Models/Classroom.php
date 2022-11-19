@@ -9,4 +9,9 @@ class Classroom extends Model
 {
     use HasFactory;
     protected $table = 'class';
+
+    public function students()
+    {
+        return $this->hasMany(Student::class, 'class_id', 'id');
+    }
 }
