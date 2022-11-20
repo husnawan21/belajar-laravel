@@ -16,8 +16,9 @@
           <thead>
             <tr>
               <th class="text-center w-14">#</th>
-              <th>Nama</th>
-              <th>Nama Siswa</th>
+              <th>Name</th>
+              <th>Students</th>
+              <th>Homeroom Teacher</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +32,7 @@
                     {{ $student->name }} <br>
                   @endforeach
                 </td>
+                <td class="capitalize">{{ $data->homeroomTeacher->name }}</td>
             @endforeach
 
 

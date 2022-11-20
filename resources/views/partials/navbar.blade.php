@@ -22,8 +22,11 @@
             <li><a>Submenu 2</a></li>
           </ul>
         </li>
-        <li><a href="/about">About</a></li>
         <li><a href="/about">Students</a></li>
+        <li><a href="/classroom">Classes</a></li>
+        <li><a href="/extracurricular">Extracurriculars</a></li>
+        <li><a href="/teacher">Teachers</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </div>
     <a class="text-xl normal-case btn btn-ghost hover:text-primary hover:bg-primary/10">laravUI</a>
@@ -49,10 +52,13 @@
           class="{{ Request::is('students') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Students</a>
       </li>
       <li class="hover:rounded-md"><a href="/class"
-          class="{{ Request::is('class') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Class</a>
+          class="{{ Request::is('class') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Classes</a>
       </li>
       <li class="hover:rounded-md"><a href="/extracurricular"
-          class="{{ Request::is('extracurricular') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Extracurricular</a>
+          class="{{ Request::is('extracurricular') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Extracurriculars</a>
+      </li>
+      <li class="hover:rounded-md"><a href="/teacher"
+          class="{{ Request::is('teacher') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">Teachers</a>
       </li>
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>

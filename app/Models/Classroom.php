@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classroom extends Model
 {
-    use HasFactory;
-    protected $table = 'class';
+  use HasFactory;
+  protected $table = 'class';
 
-    public function students()
-    {
-        return $this->hasMany(Student::class, 'class_id', 'id');
-    }
+  public function students()
+  {
+    return $this->hasMany(Student::class, 'class_id', 'id');
+  }
+
+  public function homeroomTeacher()
+  {
+    return $this->belongsTo(Teacher::class, 'teacher_id', 'id');
+  }
 }

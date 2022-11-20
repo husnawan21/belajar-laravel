@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function index()
-    {
-        $student = Student::with(['class', 'extracurriculars'])->get();
-        return view('students', [
-            'studentList' => $student
-        ]);
-    }
+  public function index()
+  {
+    $student = Student::with(['class.homeroomTeacher', 'extracurriculars'])->get();
+    return view('students', [
+      'studentList' => $student
+    ]);
+  }
 }
