@@ -5,7 +5,12 @@
   <section class="min-h-screen hero bg-base-200">
     <div class="text-center hero-content">
 
-      <div class="max-w-2xl mt-56">
+      <div class="max-w-2xl mt-24">
+        <div class="mb-8 avatar">
+          <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src="https://placeimg.com/192/192/people" />
+          </div>
+        </div>
         <h1 class="text-5xl font-bold">Hello, <span class="text-primary"> {{ $name }}</span><label
             class="mx-2 text-5xl swap swap-flip">
 

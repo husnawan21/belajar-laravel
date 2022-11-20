@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="max-w-xl mx-auto mt-56">
-    <article class="prose">
+    <article class="px-4 prose">
       <h1>Garlic bread with cheese: What the science tells us</h1>
       <p>But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up
         around the country.</p>

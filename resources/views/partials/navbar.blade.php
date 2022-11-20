@@ -1,4 +1,4 @@
-<div class="fixed z-20 py-3 navbar bg-base-100/60 backdrop-blur-lg">
+<div class="fixed z-20 md:py-3 navbar bg-base-100/60 backdrop-blur-lg">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -8,7 +8,9 @@
         </svg>
       </label>
       <ul tabindex="0" class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-        <li><a href="/">Home</a></li>
+        <li><a href="/"
+            class="inline-block {{ Request::is('/') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Home</a>
+        </li>
         <li tabindex="0">
           <a class="justify-between">
             Product
@@ -22,11 +24,21 @@
             <li><a>Submenu 2</a></li>
           </ul>
         </li>
-        <li><a href="/about">Students</a></li>
-        <li><a href="/classroom">Classes</a></li>
-        <li><a href="/extracurricular">Extracurriculars</a></li>
-        <li><a href="/teacher">Teachers</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/students"
+            class="{{ Request::is('students') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Students</a>
+        </li>
+        <li><a href="/class"
+            class="{{ Request::is('class') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Classes</a>
+        </li>
+        <li><a href="/extracurricular"
+            class="{{ Request::is('extracurricular') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Extracurriculars</a>
+        </li>
+        <li><a href="/teacher"
+            class="{{ Request::is('teacher') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Teachers</a>
+        </li>
+        <li><a href="/about"
+            class="{{ Request::is('about') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">About</a>
+        </li>
       </ul>
     </div>
     <a class="text-xl normal-case btn btn-ghost hover:text-primary hover:bg-primary/10">laravUI</a>

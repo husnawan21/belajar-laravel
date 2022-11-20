@@ -18,7 +18,7 @@
         </ol>
       </div>
 
-      <a href="/students" class="my-6 btn btn-outline">Back</a>
+      <a href="/class" class="my-6 btn btn-outline">Back</a>
     </article>
   </div>
 @endsection

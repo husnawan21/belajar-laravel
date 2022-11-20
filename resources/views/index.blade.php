@@ -39,7 +39,7 @@
 
         {{-- table --}}
         <div class="py-6 overflow-x-auto">
-          <table class="table w-full rounded-lg shadow-md shadow-primary/20">
+          <table class="table w-full rounded-lg shadow-md">
             <!-- head -->
             <thead>
               <tr>
