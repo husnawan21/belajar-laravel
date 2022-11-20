@@ -8,7 +8,9 @@
       <p>For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with
         the food earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for
         Halloween.</p>
-      <h2 class="-my-2">Ekskul List</h2>
+      <div class="flex items-center justify-between">
+        <h2>Extracurricular List</h2><a href="" class="btn btn-success">Add data</a>
+      </div>
       {{-- table --}}
       <div class="overflow-x-auto">
         <table class="table w-full rounded-lg shadow-lg">
