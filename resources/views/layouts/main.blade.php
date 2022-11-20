@@ -9,7 +9,7 @@
   @vite('resources/css/app.css')
 </head>
 
-<body class="selection:bg-primary selection:text-white">
+<body data-theme="night" class="selection:bg-primary selection:text-white">
 
   <div class="flex flex-col justify-between min-h-screen">
     <div>

@@ -9,9 +9,17 @@ class ClassController extends Controller
 {
   public function index()
   {
-    $class = Classroom::with('students', 'homeroomTeacher')->get();
+    $class = Classroom::get();
     return view('classroom', [
       'classList' => $class
+    ]);
+  }
+
+  public function show($id)
+  {
+    $class = Classroom::with(['students', 'homeroomTeacher'])->findOrFail($id);
+    return view('class-detail', [
+      'class' => $class
     ]);
   }
 }

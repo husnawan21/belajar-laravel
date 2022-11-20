@@ -10,15 +10,16 @@
         Halloween.</p>
       <p>But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up
         around the country.</p>
-      <h2>Teacher List</h2>
+      <h2 class="-my-2">Teacher List</h2>
       {{-- table --}}
-      <div class="-my-8 overflow-x-auto">
-        <table class="table w-full rounded-lg shadow-md shadow-primary/20">
+      <div class="overflow-x-auto">
+        <table class="table w-full rounded-lg shadow-lg">
           <!-- head -->
           <thead>
             <tr>
               <th class="text-center w-14">#</th>
               <th>Name</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -27,6 +28,8 @@
               <tr>
                 <th class="text-center w-14">{{ $loop->iteration }}</th>
                 <td class="capitalize">{{ $teacher->name }}</td>
+                <td><a href="/teacher-detail/{{ $teacher->id }}" class="btn btn-xs btn-outline">Detail</a></td>
+                </td>
             @endforeach
 
 

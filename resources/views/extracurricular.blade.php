@@ -11,13 +11,13 @@
       <h2 class="-my-2">Ekskul List</h2>
       {{-- table --}}
       <div class="overflow-x-auto">
-        <table class="table w-full rounded-lg shadow-md shadow-primary/20">
+        <table class="table w-full rounded-lg shadow-lg">
           <!-- head -->
           <thead>
             <tr>
               <th class="text-center w-14">#</th>
               <th>Nama</th>
-              <th>Anggota</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -26,10 +26,7 @@
               <tr>
                 <th class="text-center w-14">{{ $loop->iteration }}</th>
                 <td>{{ $data->name }}</td>
-                <td>
-                  @foreach ($data->students as $student)
-                    {{ $student->name }} <br>
-                  @endforeach
+                <td><a href="extracurricular-detail/{{ $data->id }}" class="btn btn-xs btn-outline">Detail</a></td>
                 </td>
             @endforeach
 

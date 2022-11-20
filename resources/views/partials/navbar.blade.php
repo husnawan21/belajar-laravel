@@ -1,4 +1,4 @@
-<div class="fixed z-20 py-3 navbar bg-base-100">
+<div class="fixed z-20 py-3 navbar bg-base-100/60 backdrop-blur-lg">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
