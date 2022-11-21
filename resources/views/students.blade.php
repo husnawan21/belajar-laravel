@@ -42,8 +42,16 @@
                 <td class="capitalize">{{ $data->name }}</td>
                 <td class="text-center">{{ $data->gender }}</td>
                 <td class="text-center">{{ $data->nis }}</td>
-                <td><a href="student/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Detail</a> <a
-                    href="student-edit/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Edit</a></td>
+                <td>
+                  <a href="student/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Detail</a>
+                  <a href="student-edit/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Edit</a>
+                  <form action="student-destroy/{{ $data->id }}" method="post" class="inline-block">
+                    @method('delete')
+                    @csrf
+                    <button class="mx-1 btn btn-xs btn-outline" type="submit"
+                      onclick="return confirm('Are you sure?')">Delete</button>
+                  </form>
+                </td>
               </tr>
             @endforeach
 

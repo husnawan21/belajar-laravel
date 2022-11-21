@@ -61,4 +61,13 @@ class StudentController extends Controller
     $student->update($request->all());
     return redirect('/students');
   }
+
+  public function destroy($id)
+  {
+    Student::findOrFail($id)->delete();
+
+    Session::flash('status', 'success');
+    Session::flash('message', 'Student has been deleted!');
+    return redirect('/students');
+  }
 }
