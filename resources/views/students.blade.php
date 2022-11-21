@@ -6,7 +6,7 @@
     <article class="prose">
       <h1>Garlic bread with cheese: What the science tells us</h1>
       @if (Session::has('status'))
-        <div class="alert alert-success shadow-lg">
+        <div class="alert alert-success shadow-lg mb-8">
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
               viewBox="0 0 24 24">
@@ -18,8 +18,13 @@
         </div>
       @endif
       <div class="flex items-center justify-between">
-
-        <h2>Student List</h2><a href="student-add" class="btn btn-success">Add data</a>
+        <div class="flex items-center">
+          <span class="font-bold text-2xl md:text-2xl text-base-content inline-block">Student List</span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <a href="/students-deleted" class="btn btn-sm sm:btn-md btn-outline mr-2">Show deleted data</a><a
+            href="student-add" class="btn btn-sm sm:btn-md">Add data</a>
+        </div>
       </div>
       {{-- table --}}
       <div class="overflow-x-auto">
