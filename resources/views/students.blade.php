@@ -29,7 +29,8 @@
                 <td class="capitalize">{{ $data->name }}</td>
                 <td>{{ $data->gender }}</td>
                 <td>{{ $data->nis }}</td>
-                <td><a href="student/{{ $data->id }}" class="btn btn-xs btn-outline">Detail</a></td>
+                <td><a href="student/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Detail</a> <a
+                    href="student-edit/{{ $data->id }}" class="mx-1 btn btn-xs btn-outline">Edit</a></td>
               </tr>
             @endforeach
 

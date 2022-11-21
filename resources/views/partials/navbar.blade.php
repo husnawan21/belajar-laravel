@@ -7,7 +7,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </label>
-      <ul tabindex="0" class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabindex="0" class="p-2 mt-3 shadow-md menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li><a href="/"
             class="inline-block {{ Request::is('/') ? 'text-primary active:text-white active:bg-primary font-semibold bg-primary/10' : '' }}">Home</a>
         </li>
@@ -19,7 +19,7 @@
               <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
             </svg>
           </a>
-          <ul class="p-2">
+          <ul class="p-2 shadow-md bg-base-100">
             <li><a>Submenu 1</a></li>
             <li><a>Submenu 2</a></li>
           </ul>

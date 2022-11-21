@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class StudentController extends Controller
 {
@@ -40,6 +39,19 @@ class StudentController extends Controller
 
     // dengan mass assignment, syarat: kolom yg mau diisi dengan var fillable/guarded di models, dan "name"nya sesuai dgn form yg disi
     Student::create($request->all());
+    return redirect('/students');
+  }
+  public function edit(Request $request, $id)
+  {
+    $student = Student::with('class')->findOrFail($id);
+    $class = Classroom::where('id', '!=', $student->class_id)->get(['id', 'name']);
+    return view('student-edit', ['student' => $student, 'class' => $class]);
+  }
+
+  public function update(Request $request, $id)
+  {
+    $student = Student::findOrFail($id);
+    $student->update($request->all());
     return redirect('/students');
   }
 }
