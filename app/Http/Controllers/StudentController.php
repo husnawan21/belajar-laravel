@@ -7,14 +7,22 @@ use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+// use Illuminate\Pagination\Paginator;
 
 class StudentController extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
-    $student = Student::get();
+    $keyword = $request->keyword;
+    $student = Student::with('class')
+      ->where('name', 'LIKE', '%' . $keyword . '%')
+      ->orWhere('nis', 'LIKE', '%' . $keyword . '%')
+      ->orWhereHas('class', function ($query) use ($keyword) {
+        $query->where('name', 'LIKE', '%' . $keyword . '%');
+      })
+      ->paginate(15)->withQueryString();
     return view('students', [
-      'studentList' => $student
+      'studentList' => $student,
     ]);
   }
 
