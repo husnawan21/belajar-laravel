@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentCreateRequest;
 use App\Models\Student;
 use App\Models\Classroom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
@@ -28,7 +30,7 @@ class StudentController extends Controller
     return view('student-add', ['class' => $class]);
   }
 
-  public function store(Request $request)
+  public function store(StudentCreateRequest $request)
   {
     // $student = new Student;
     // $student->name = $request->name;
@@ -38,7 +40,12 @@ class StudentController extends Controller
     // $student->save();
 
     // dengan mass assignment, syarat: kolom yg mau diisi dengan var fillable/guarded di models, dan "name"nya sesuai dgn form yg disi
-    Student::create($request->all());
+
+    $student = Student::create($request->all());
+    if ($student) {
+      Session::flash('status', 'success');
+      Session::flash('message', 'New student added successful!');
+    }
     return redirect('/students');
   }
   public function edit(Request $request, $id)

@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    use HasFactory;
-    // protected $table = 'students';
-    protected $guarded = ['id'];
+  use HasFactory;
+  // protected $table = 'students';
+  protected $guarded = ['id'];
 
-    public function class()
-    {
-        return $this->belongsTo(Classroom::class);
-    }
+  public function class()
+  {
+    return $this->belongsTo(Classroom::class);
+  }
 
-    public function extracurriculars()
-    {
-        return $this->belongsToMany(Extracurricular::class, 'student_extracurriculars', 'student_id', 'extracurricular_id');
-    }
+  public function extracurriculars()
+  {
+    return $this->belongsToMany(Extracurricular::class, 'student_extracurriculars', 'student_id', 'extracurricular_id');
+  }
 }
