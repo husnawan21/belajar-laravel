@@ -49,7 +49,16 @@ class StudentController extends Controller
 
     // dengan mass assignment, syarat: kolom yg mau diisi dengan var fillable/guarded di models, dan "name"nya sesuai dgn form yg disi
 
+    $newName = '';
+    if ($request->file('photo')) {
+      $extension = $request->file('photo')->getClientOriginalExtension();
+      $newName = $request->name . '-' . now()->timestamp . '.' . $extension;
+      $request->file('photo')->storeAs('photo', $newName);
+    }
+
+    $request['image'] = $newName;
     $student = Student::create($request->all());
+
     if ($student) {
       Session::flash('status', 'success');
       Session::flash('message', 'New student added successful!');

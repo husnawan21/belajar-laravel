@@ -4,6 +4,16 @@
 @section('content')
   <div class="max-w-xl mx-auto mt-56">
     <article class="px-4 prose">
+      <div class="flex justify-center mb-12">
+        @if ($student->image != '')
+          <img src="{{ asset('storage/photo/' . $student->image) }}" alt="{{ $student->name }}"
+            class="w-48 overflow-hidden rounded-full ring-primary ring-offset-base-100 ring-offset-8 ring-8" />
+        @else
+          <img src="{{ asset('images/default.png') }}" alt="{{ $student->name }}"
+            class="w-48 overflow-hidden rounded-full ring-primary ring-offset-base-100 ring-offset-8 ring-8" />
+        @endif
+      </div>
+
       <h1 class="-my-2">Detail siswa <span class="text-primary">{{ $student->name }}</span></h1>
 
       {{-- table --}}
@@ -12,7 +22,6 @@
           <!-- head -->
           <thead>
             <tr>
-
               <th>Name</th>
               <th>NIS</th>
               <th>Gender</th>
@@ -24,6 +33,10 @@
           <tbody>
             <!-- row 1 -->
             <tr>
+              <td>
+                <img src="{{ asset('storage/photo/' . $student->image) }}" alt="{{ $student->name }}"
+                  class="w-16 overflow-hidden rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" />
+              </td>
               <td class="font-semibold capitalize">{{ $student->name }}</td>
               <td>{{ $student->nis }}</td>
               <td>

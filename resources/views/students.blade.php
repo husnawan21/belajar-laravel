@@ -91,6 +91,5 @@
     <div class="flex justify-center my-8">
       {{ $studentList->links() }}
     </div>
-    <h3 class="prose-h1">Haloooo kamu</h3>
   </div>
 @endsection
