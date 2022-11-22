@@ -75,12 +75,14 @@
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>
       </li>
-      <li class="hover:rounded-md"><a href="/logout" class="hover:bg-error/10 hover:text-error-content">Logout</a>
-      </li>
 
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn">Get started</a>
+    @if (Auth::user())
+      <a href="/logout" class="btn btn-outline">Logout</a>
+    @else
+      <a href="/login" class="btn btn-primary">Login</a>
+    @endif
   </div>
 </div>

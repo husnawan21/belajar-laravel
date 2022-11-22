@@ -2,10 +2,10 @@
 @section('title', 'About')
 
 @section('content')
-  <section class="min-h-screen hero bg-base-200">
+  <section class="min-h-screen hero bg-base-100">
     <div class="text-center hero-content">
 
-      <div class="max-w-2xl mt-24">
+      <div class="max-w-2xl px-5 py-16 mt-24 bg-white shadow-xl rounded-xl">
         <div class="mb-8 avatar">
           <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src="images/default.png" />

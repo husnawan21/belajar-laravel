@@ -2,12 +2,17 @@
 @section('title', 'Home')
 
 @section('content')
-  <section class="min-h-screen hero bg-base-200">
+  <section class="min-h-screen hero">
     <div class="text-center hero-content">
 
       <div class="max-w-2xl mt-56">
-        <h1 class="text-5xl font-bold">Hello, <span class="text-primary"> {{ Auth::user()->name }}</span><label
-            class="mx-2 text-5xl swap swap-flip">
+        <h1 class="text-5xl font-bold">Hello, <span class="text-primary">
+            @if (Auth::user())
+              {{ Auth::user()->name }}
+            @else
+              Kawan
+            @endif
+          </span><label class="mx-2 text-5xl swap swap-flip">
 
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" />
@@ -15,7 +20,13 @@
             <div class="swap-on">😈</div>
             <div class="swap-off">😇</div>
           </label></h1>
-        <p class="mt-6 text-3xl font-semibold">Kamu adalah seorang {{ Auth::user()->role->name }}, lho!</p>
+        <p class="mt-6 text-3xl font-semibold">Kamu adalah seorang
+          @if (Auth::user())
+            {{ Auth::user()->role->name }}, lho!
+          @else
+            tamu nih, <a href="/login" class="underline hover:italic hover:text-primary">login</a> dulu yuk!
+          @endif
+        </p>
 
         <p class="py-6 leading-loose">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
           exercitationem
