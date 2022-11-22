@@ -75,6 +75,8 @@
       <li class="hover:rounded-md"><a href="/about"
           class="{{ Request::is('about') ? 'visited:text-primary hover:bg-primary/10 font-semibold' : '' }}">About</a>
       </li>
+      <li class="hover:rounded-md"><a href="/logout" class="hover:bg-error/10 hover:text-error-content">Logout</a>
+      </li>
 
     </ul>
   </div>

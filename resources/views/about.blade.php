@@ -8,7 +8,7 @@
       <div class="max-w-2xl mt-24">
         <div class="mb-8 avatar">
           <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img src="https://placeimg.com/192/192/people" />
+            <img src="images/default.png" />
           </div>
         </div>
         <h1 class="text-5xl font-bold">Hello, <span class="text-primary"> {{ $name }}</span><label

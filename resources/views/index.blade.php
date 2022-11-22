@@ -6,7 +6,7 @@
     <div class="text-center hero-content">
 
       <div class="max-w-2xl mt-56">
-        <h1 class="text-5xl font-bold">Hello, <span class="text-primary"> {{ $name }}</span><label
+        <h1 class="text-5xl font-bold">Hello, <span class="text-primary"> {{ Auth::user()->name }}</span><label
             class="mx-2 text-5xl swap swap-flip">
 
             <!-- this hidden checkbox controls the state -->
@@ -15,18 +15,18 @@
             <div class="swap-on">😈</div>
             <div class="swap-off">😇</div>
           </label></h1>
-        <p class="mt-6 text-3xl font-semibold">Kamu adalah seorang {{ $role }}, lho!</p>
+        <p class="mt-6 text-3xl font-semibold">Kamu adalah seorang {{ Auth::user()->role->name }}, lho!</p>
 
         <p class="py-6 leading-loose">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
           exercitationem
           quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        @if ($role == 'admin')
+        {{-- @if ($role == 'admin')
           <a href="" class="btn btn-primary btn-outline">Ke halaman admin, yuk!</a>
         @elseif ($role = 'staff')
           <a href="" class="btn btn-primary btn-outline">Ke halaman gudang, yuk!</a>
         @else
           <a href="" class="btn btn-primary btn-outline">Intip profilmu, yuk!</a>
-        @endif
+        @endif --}}
         <ul class="mt-12">
           <p class="my-4 text-xl font-semibold">Nama buah-buahan:</p>
           @foreach ($buah as $data)

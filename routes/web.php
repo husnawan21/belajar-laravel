@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -23,13 +24,11 @@ Route::get('/welcome', function () {
 
 Route::get('/', function () {
   return view('index', [
-    'name' => 'Dwi Husnawan',
-    'role' => 'admin',
     'buah' => [
       'pisang', 'mangga', 'jeruk', 'nanas'
     ]
   ]);
-});
+})->middleware('auth');
 
 Route::get('/about', function () {
   return view('about', [
@@ -42,7 +41,12 @@ Route::get('/about', function () {
   ]);
 });
 
-Route::get('/students', [StudentController::class, 'index']);
+Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
+
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+Route::get('/students', [StudentController::class, 'index'])->middleware('auth');
 Route::get('/student/{id}', [StudentController::class, 'show']);
 Route::get('/student-add', [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'store']);
@@ -52,7 +56,7 @@ Route::delete('/student-destroy/{id}', [StudentController::class, 'destroy']);
 Route::get('/students-deleted', [StudentController::class, 'deleteStudent']);
 Route::get('/student/{id}/restore', [StudentController::class, 'restore']);
 
-Route::get('/class', [ClassController::class, 'index']);
+Route::get('/class', [ClassController::class, 'index'])->middleware('auth');
 Route::get('/class-detail/{id}', [ClassController::class, 'show']);
 
 Route::get('/extracurricular', [ExtracurricularController::class, 'index']);

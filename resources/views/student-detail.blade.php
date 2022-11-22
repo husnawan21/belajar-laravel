@@ -14,7 +14,7 @@
         @endif
       </div>
 
-      <h1 class="-my-2">Detail siswa <span class="text-primary">{{ $student->name }}</span></h1>
+      <h1 class="-my-2">Student detail: <span class="text-primary">{{ $student->name }}</span></h1>
 
       {{-- table --}}
       <div class="overflow-x-auto">
@@ -33,10 +33,6 @@
           <tbody>
             <!-- row 1 -->
             <tr>
-              <td>
-                <img src="{{ asset('storage/photo/' . $student->image) }}" alt="{{ $student->name }}"
-                  class="w-16 overflow-hidden rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" />
-              </td>
               <td class="font-semibold capitalize">{{ $student->name }}</td>
               <td>{{ $student->nis }}</td>
               <td>
